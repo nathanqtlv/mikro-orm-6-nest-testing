@@ -15,10 +15,9 @@
     "moduleResolution": "node",
     "baseUrl": ".",
     "paths": {
-      "@test": ["./test"],
-      "@config": ["./src/common/configuration"]
+      "@common": ["./src/modules/common"],
+      "@test": ["./test"]
     },
-    "typeRoots": ["node_modules/@types"],
     "allowSyntheticDefaultImports": true,
     "preserveSymlinks": true,
     "esModuleInterop": true,
@@ -26,7 +25,7 @@
     "experimentalDecorators": true,
     "resolveJsonModule": true,
     "skipLibCheck": true,
-    "lib": ["ESNext.AsyncIterable", "ES2015.Iterable"]
+    "lib": ["ESNext.AsyncIterable", "ES2015.Iterable", "es2022.error"]
   },
   "include": ["src/**/*", "test/**/*", "tsconfig.json"],
   "ts-node": {

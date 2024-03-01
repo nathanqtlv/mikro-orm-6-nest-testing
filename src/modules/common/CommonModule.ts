@@ -7,9 +7,9 @@ import { Configuration } from './Configuration';
   providers: [
     {
       provide: Configuration,
-      useFactory: () => new Configuration(process.env),
+      useFactory: () => Configuration.fromEnv(),
     },
   ],
   exports: [Configuration],
 })
-export class ConfigurationModule {}
+export class CommonModule {}

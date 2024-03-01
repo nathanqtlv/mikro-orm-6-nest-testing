@@ -18,9 +18,9 @@ module.exports = {
   modulePaths: ['.'],
   testEnvironment: 'node',
   transform: {
-    '^.+\\.(t|j)s$': 'ts-jest',
+    '^.+\\.(t|j)s$': '@swc/jest',
   },
   testTimeout: 20000,
   testRegex: '.*\\.test\\.ts$',
-  setupFilesAfterEnv: ['<rootDir>/test/jest/setup.ts'],
+  setupFilesAfterEnv: ['<rootDir>/test/jest-setup.ts'],
 };
