@@ -1,0 +1,35 @@
+{
+  "extends": ["config:base", ":preserveSemverRanges", ":rebaseStalePrs"],
+  "enabled": true,
+  "automergeStrategy": "rebase",
+  "encrypted": {
+    "npmToken": "wcFMA/xDdHCJBTolAQ//VswE7a1Qg0l+P6jQMtOxN7T7vH3PAA3Q6OdqNHQMLgyGGEHtSH6HDlHWpbqyPR7532iB0FSU301A+g5qZJlKT6UhMIwcgFeooje38qycfViUOrgdTy8M24tI4yfWVkPEPNASAKh3Fxtg9k0UajaH4/an65sS6m5yBLbTNY4s+iY3vW83MEeRs6WGFWIDwnG+5P/XiJ6Mp7SJ1B/Zsr2VbZ9mn52bKlRvMKWibbz9SNup91sMZAfhTC6U3JLcLLWuV4+E4BFMBh+RmyJ9yRViV5dOd7Cn+QWDWC/1ajNugN7jn4Kukyc3y7t7E9ldSjoAAcSQtUwjlDVeo2jd/n9FzMHFK1zXKfimrFJwt/SUzWRLfpqDCKbQwDChCSYU9xMt9RJ5Jq8gy6Dz0OLjGeU/TqHsCDfL3LlAtI270DWow06Vk/7h8uZgjh5i41K20kdIVPiWT+e9u2n6ybNiVYQsJKaH3PLUn6feYJeDNclh+FSPnOy9BnX90U/pNYeAc5Qhthrv/hRJmYueK+14mBsduMLlgq1pijo/TYjCXZ33grXd64MUtz8d8vexT4ChE+Qo81436/BXulLaxxfoDxoQpOiofsWb2p8Gp2BluShhbnh7eN7gOw5vJIIy9e8oPEJ/NcffTnK3H/uc+hlpYdBxAC6OKVw2MBqw0wmYlLbJkcHSeQEjrLIVfZcrJI4F6GrDR6orjnI1vvLUk12S9cxkpV7n4TXJaZ07+5PtfURx2a7VxKTBSJAHwib3OxQ/++30Svll7/pQAo2LiMJguf5sd9hgtpFIldsxv5kfGLrdGKRZ11sBp7nnhgl43bfHj+/O1Yz4HazmHn8m9zA"
+  },
+  "packageRules": [
+    {
+      "matchUpdateTypes": ["minor", "patch"],
+      "automerge": true
+    },
+    {
+      "matchDatasources": ["docker"],
+      "matchPackageNames": ["postgres"],
+      "matchUpdateTypes": ["major"],
+      "enabled": false
+    },
+    {
+      "matchPackageNames": ["node"],
+      "automerge": false
+    },
+    {
+      "matchDatasources": ["npm"],
+      "rangeStrategy": "bump"
+    }
+  ],
+  "schedule": ["before 8am"],
+  "dependencyDashboard": true,
+  "major": {
+    "dependencyDashboardApproval": true
+  },
+  "commitBodyTable": true,
+  "timezone": "Europe/Paris"
+}

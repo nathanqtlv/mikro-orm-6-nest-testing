@@ -1,0 +1,3 @@
+{
+  "extends": ["@voodoo.io/commitlint-config"]
+}
